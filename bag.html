@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/norm.css">
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: #f6f6f6">
+    <header>
+        <div class="sqz-head__lineone">
+            <div class="pure-g">
+                <div class="pure-u-1-1 centerizer" style="margin:10px 0">
+                    <div class="sqz-head__logo">
+                        <img width="160" src="images/logo.png" alt="Logo" style="">
+                    </div>
+                    <div class="sqz-head__phone">+7 (495) 645-10-49</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sqz-head__linesecond">
+            <div class="pure-g">
+                <div class="pure-u-1-1 centerizer">
+                    <nav class="sqz-menu">
+                        <a href="#">О КОЛЯСКЕ</a>     
+                        <a href="#">КУПИТЬ КОЛЯСКУ</a>     
+                        <a href="#">АКСЕССУАРЫ</a>    
+                        <a href="#">ДОСТАВКА И ОПЛАТА</a>   
+                        <a href="#">КОНТАКТЫ</a>
+                    </nav> 
+                    <div class="sqz-head__basket"><span>КОРЗИНА (0 ₽) </span><img src="images/basket.svg" alt="Корзина"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <h1>КОРЗИНА ПОКУПОК</h1>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div class="bag-list">
+                    <div class="bag-item">
+                        <div class="bag-item_img">
+                            <img src="images/pro15.png">
+                        </div>
+                        <div class="bag-item_info">
+                            <div class="bag-item_title">Коляска SQUIZZ</div>
+                            <div class="centerizer">
+                                <div class="bag-item_controls">
+                                    <div class="bag-item_controls_minus">-</div>
+                                    <div class="bag-item_controls_numb">1</div>
+                                    <div class="bag-item_controls_plus">+</div>
+                                </div>
+                                <div class="bag-item_prices">
+                                        <div class="bag-item_prices_one">2 290 ₽</div>
+                                        <div class="bag-item_prices_all">19 980 ₽</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bag-item">
+                        <div class="bag-item_img">
+                            <img src="images/pro15.png">
+                        </div>
+                        <div class="bag-item_info">
+                            <div class="bag-item_title">Коляска SQUIZZ</div>
+                            <div class="centerizer">
+                                <div class="bag-item_controls">
+                                <div class="bag-item_controls_minus">-</div>
+                                <div class="bag-item_controls_numb">1</div>
+                                <div class="bag-item_controls_plus">+</div>
+                                </div>
+                                <div class="bag-item_prices">
+                                    <div class="bag-item_prices_one">2 290 ₽</div>
+                                    <div class="bag-item_prices_all">19 980 ₽</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bag-item">
+                        <div class="bag-item_img">
+                            <img src="images/pro15.png">
+                        </div>
+                        <div class="bag-item_info">
+                            <div class="bag-item_title">Коляска SQUIZZ</div>
+                            <div class="centerizer">
+                                <div class="bag-item_controls">
+                                    <div class="bag-item_controls_minus">-</div>
+                                    <div class="bag-item_controls_numb">1</div>
+                                    <div class="bag-item_controls_plus">+</div>
+                                </div>
+                                <div class="bag-item_prices">
+                                        <div class="bag-item_prices_one">2 290 ₽</div>
+                                        <div class="bag-item_prices_all">19 980 ₽</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bag-total">
+                    <span class="bag-total_text">Итого:</span><span class="bag-total_numb">32 530 </span>₽
+                </div>
+            </div>
+
+            <div class="pure-u-1-2">
+                <form action="" class="sqz-form">
+                    <h2>Отправить сообщение</h2>
+                    <input type="text" placeholder="Имя" class="sqz-input">
+                    <input type="text" placeholder="Телефон" class="sqz-input">
+                    <input type="text" placeholder="E-mail" class="sqz-input">
+                    <textarea name="" id="" cols="30" rows="5" placeholder="Комментарий к заказу" class="sqz-textarea"></textarea>
+                    <!--способ доставки-->
+                    <p>Способ доставки:
+                        <input type="radio" name="delivery" id="delivery-sam"> 
+                        <label for="delivery-sam">Самовывоз</label>
+                        <input type="radio" name="delivery" id="delivery-nesam"> 
+                        <label for="delivery-nesam">Доставка</label>
+                    </p>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="Адрес доставки" class="sqz-textarea"></textarea>
+                    <input type="checkbox" id="checker"  class="sqz-checkbox">
+                    <label for="checker" class='sqz-checker'>Я согласен на сбор и обработку персональных данных согласно Политике Конфеденциальности</label>
+                    <div> <button class="sqz-submit">ОТПРАВИТЬ СООБЩЕНИЕ</button> </div>
+                </form>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>
+                    Коляска SQUIZZ делает путешествие с ребенком удобным и комфортным. Благодаря компактному корпусу и размеру ее можно разместить где угодно. А удобный чехол с широким ремнем позволяет нести сложенную коляску на плече или, используя выдвижную ручку, везти как чемодан.
+                </p> 
+                <p>
+                    Коляска SQUIZZ делает путешествие с ребенком удобным и комфортным. Благодаря компактному корпусу и размеру ее можно разместить где угодно. А удобный чехол с широким ремнем позволяет нести сложенную коляску на плече или, используя выдвижную ручку, везти как чемодан.
+                </p>
+            </div>
+        </div>
+
+    </main>
+    <footer class="sqz-footer">
+        <div class="pure-g">
+            <div class="pure-u-1-1 centerizer">
+                <div class="sqz-footer__logo">
+                    <img width="160" src="images/logo.png" alt="Logo" style="">
+                </div>
+                <nav class="sqz-menu">
+                    <a href="#">О КОЛЯСКЕ</a>     
+                    <a href="#">КУПИТЬ КОЛЯСКУ</a>     
+                    <a href="#">АКСЕССУАРЫ</a>    
+                    <a href="#">ДОСТАВКА И ОПЛАТА</a>   
+                    <a href="#">КОНТАКТЫ</a>
+                </nav>
+                <div class="sqz-footer__up"><div class="icon"></div></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
