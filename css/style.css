@@ -1,5 +1,6 @@
 body {
     font-family:  Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
 }
 header{
 overflow: hidden;
@@ -30,14 +31,14 @@ img{
 }
 
 h1{
-font-family: Roboto-Regular;
+font-family: Roboto;
 font-size: 48px;
 color: #717171;
 letter-spacing: 0;
 }
 
 h2{
-font-family: Roboto-Regular;
+font-family: Roboto;
 font-size: 36px;
 font-weight: 100;
 color: #404040;
@@ -80,7 +81,7 @@ header img[alt="Logo"]{
     align-items: flex-end;
 }
 .sqz-contact__text {
-font-family: Roboto-Regular;
+font-family: Roboto;
 font-size: 24px;
 color: #404040;
 letter-spacing: 0;
@@ -91,7 +92,7 @@ letter-spacing: 0;
 
 .sqz-contacts__list li{
     margin-bottom: 10px;
-    font-family: Roboto-Regular;
+    font-family: Roboto;
     font-size: 28px;
     color: #404040;
     letter-spacing: 0;
@@ -174,6 +175,8 @@ letter-spacing: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    visibility: hidden;
 }
 
 .sqz-footer__up .icon{
@@ -216,7 +219,7 @@ background-repeat: no-repeat;
 }
 
 .sqz-textarea, .sqz-input{
-    font-family: Roboto-Regular;
+    font-family: Roboto;
     width: 100%;
     padding: 10px;
     font-size: 20px;
@@ -240,7 +243,7 @@ background-repeat: no-repeat;
 .sqz-checker{
     display: inline-block;
     padding-left: 30px;
-    font-family: Roboto-Regular;
+    font-family: Roboto;
     font-size: 14px;
     color: #4C4C4C;
     letter-spacing: 0; 
@@ -260,8 +263,48 @@ background-repeat: no-repeat;
     border: 2px solid #717171;
 }
 
-.sqz-checkbox + .sqz-checker::after{
+#checker:checked + .sqz-checker:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 4px;
+    background-color: #2AD567;
+}
 
+#delivery-sam,
+#delivery-nesam{
+    display: none;
+}
+.delivery-sam_label,
+.delivery-nesam_label{
+    position: relative;
+}
+.delivery-sam_label:before,
+.delivery-nesam_label:before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+   border-radius: 50%;
+   margin-right: 10px;
+    background-color: #ffffff;
+    border: solid 3px #2ad567;
+}
+#delivery-sam:checked + .delivery-sam_label:after,
+#delivery-nesam:checked + .delivery-nesam_label:after{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    background-color: #2ad567;
 }
 
 .sqz-submit{
@@ -271,7 +314,7 @@ background-repeat: no-repeat;
     background: #2AD567;
     border: 2px solid #2AD567;
 
-    font-family: Roboto-Regular;
+    font-family: Roboto;
     font-size: 20px;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -282,7 +325,7 @@ background-repeat: no-repeat;
     height: 628px;
     background-color: #ffffff;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 22px;
+    margin: 0 10px 22px;
 }
 .sqz-product__photo{
     display: flex;
@@ -301,14 +344,15 @@ background-repeat: no-repeat;
     padding: 16px;
 }
 .sqz-product__title{
-    font-family: Roboto-Bold;
+    font-family: Roboto;
+    font-weight:600; 
     font-size: 28px;
     color: #717171;
     letter-spacing: 0;
     margin-bottom: 15px;
 }
 .sqz-product__price{
-    font-family: Roboto-Regular;
+    font-family: Roboto;
     font-size: 28px;
     color: #515151;
     letter-spacing: 0;
@@ -319,10 +363,20 @@ background-repeat: no-repeat;
     background: url(../images/basket.svg) #2AD567 center no-repeat;
     background-size: 44px 40px;
     border: 1px solid #FFFFFF;
-    box-shadow: 0 0 100px 0 rgba(0,0,0,0.20);
     border-radius: 40px;
     width: 80px;
     height: 80px;
+    outline: 0;
+    opacity: 0.7;
+}
+
+.sqz-buyme:hover{
+    opacity: 1;
+}
+
+
+.sqz-buyme--shadowed{
+    box-shadow: 0 0 100px 0 rgba(0,0,0,0.20);
 }
 
 .sqz-form{
@@ -330,7 +384,10 @@ background-repeat: no-repeat;
     padding: 25px 35px;
     margin: 0 0 0 auto;
 }
-
+.sqz-form--bagpage{
+    background-color: #ffffff;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+}
 .bag-item{
     width: 600px;
     height: 150px;
@@ -402,6 +459,7 @@ background-repeat: no-repeat;
 .sqz-go-bag{
     width: 378px;
     height: 50px;
+    line-height: 54px;
     box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
     border: solid 1px #ffffff;
@@ -411,6 +469,8 @@ background-repeat: no-repeat;
     text-align: center;
     color: #ffffff;
     margin: 24px 0 36px;
+    font-family: Roboto;
+   font-weight: 100;
 }
 .bag-item_prices_all{
     font-family: Roboto;
@@ -468,9 +528,8 @@ background-repeat: no-repeat;
 .slider-acces{
     padding-top: 45px;
     margin-top: 90px;
-    height: 879px;
-    background-image: linear-gradient(to bottom, rgba(147, 255, 190, 0.5), rgba(132, 246, 255, 0.5),
-    rgba(216, 216, 216, 0.5));
+    height: 860px;
+    background-image: linear-gradient(to bottom, rgba(147, 255, 190, 0.5), rgba(132, 246, 255, 0.5), rgba(216, 216, 216, 0.5)),url(../images/img6.png);
 }
 
 .slider-acces_title{
@@ -490,15 +549,42 @@ background-repeat: no-repeat;
 .sliderok{
     margin-top: 46px;
     position: relative;
-
 }
-
-.slider-nav_item{
-    width: 141px;
-    height: 136px;
-    margin: 10px;
+.slider-for{
+    pointer-events: none;
+}
+.slider-for_item {
+    max-width: 600px;
+    height: 527px;
     background-color: #ffffff;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+}
+.slider-for_item img{
+    max-width: 425px;
+    max-height: 379px;
+    margin: auto;
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.slider-for .slick-list{
+    overflow: visible;
+}
+.slider-nav_item{
+    width: 141px;
+    margin: 10px;
+
+    height: 136px;
+    padding: 19px;
+    background-color: #ffffff;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.slider-nav_item img {
+    display: block;
+    max-height: 100px;
+    margin: auto;
 }
 
 .sqz-product-info{
@@ -565,6 +651,9 @@ background-repeat: no-repeat;
     font-weight: 300;
     color: #797979;
     margin-bottom: 70px;
+}
+.main-theme{
+    margin-top: -35px;
 }
 .main-theme-slide {
     position: relative;
@@ -658,20 +747,117 @@ background-color: rgb(91, 200, 204,0.8);
     vertical-align: middle;
 }
 .sqz-advert_info_title{
-    font-family: Roboto-Medium;
+    font-family: Roboto;
+    font-weight: 400;
     font-size: 60px;
     color: #797979;
     letter-spacing: 0;
 }
 .sqz-advert_info_text{
-    font-family: Roboto-Light;
+    font-family: Roboto;
+    font-weight: 100;
     font-size: 22px;
     color: #515151;
     letter-spacing: 0;
 }
 .sqz-advert_price{
-    font-family: Roboto-Light;
+    font-family: Roboto;
+    font-weight: 100;
     font-size: 48px;
     color: #515151;
     letter-spacing: 0;
+}
+
+
+#myBtn {
+    display: block; 
+    opacity: 0;
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+    transform: translate(600px);
+    z-index: 99;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    height: 120px;
+    width: 120px;
+    background-color: #D4DFDD;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+#myBtn:before{
+    content: '';
+    position: absolute;
+    left: 47px;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    border-left: 2px solid #FFFFFF;
+    border-top: 2px solid #FFFFFF;
+}
+
+.read-more-state {
+    display: none;
+}
+
+.read-more-target {
+opacity: 0;
+max-height: 0;
+font-size: 0;
+transition: .25s ease;
+}
+.read-more-wrap{
+    margin: 10px 0;
+}
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+opacity: 1;
+font-size: inherit;
+max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+content: 'Показать характеристики';
+}
+.read-more-state ~ .read-more-trigger:after{
+    content: '';
+    display: inline-block;
+    width:10px;
+    height: 10px;
+    border-top: 1px solid #515151;
+    border-left: 1px solid #515151;
+    transform: rotate(45deg);
+    margin-left: 10px;
+    transition: 0.2s all;
+}
+.read-more-state:checked ~ .read-more-trigger:before {
+content: 'Скрыть характеристики';
+}
+
+.read-more-state:checked ~ .read-more-trigger:after {
+    content: '';
+    display: inline-block;
+    width:10px;
+    height: 10px;
+    border-top: 1px solid #515151;
+    border-left: 1px solid #515151;
+    transform: rotate(225deg) translate(7px, 4px);
+    margin-left: 10px;
+}
+
+.read-more-trigger {
+cursor: pointer;
+
+font-family: Roboto;
+font-size: 22px;
+color: #515151;
+text-decoration: underline;
+
 }
