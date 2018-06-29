@@ -20,7 +20,7 @@
             <div class="pure-g">
                 <div class="pure-u-1-1 centerizer" style="margin:10px 0">
                     <a href="index.html" class="sqz-footer__logo">
-                        <img width="160" src="images/logo.png" alt="Logo" style="">
+                        <img width="160" src="images/logo.png" alt="Logo">
                     </a>
                     <div class="sqz-head__phone"><a href="tel:74956451049">+7 (495) 645-10-49</a></div>
                 </div>
@@ -89,6 +89,9 @@
                             Удобные и компактные коляски с идеальным дизайном
                         </div>
                         <div class="sqz-line_button">
+                            <span class="sqz-video">
+
+                            </span>
                             <span>
                                 Видеопрезентация
                             </span>
@@ -120,6 +123,37 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="sqz-banner">
+            <div class="pure-g">
+                <div class="pure-u-1-1">
+                    <div class="galery">
+                        <div>
+                            <div class="galery-item" style="background-image:url(./images/img3.png)">
+                                <div class="galery-title">Перевозится в ручной клади</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="galery-item" style="background-image:url(./images/img2.png)">
+                                <div class="galery-title">Не занимает места дома</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="galery-item" style="background-image:url(./images/img.png)">
+                                <div class="galery-title">Антикорозионная защита металла</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="galery-item" style="background-image:url(./images/img10.png)">
+                                <div class="galery-title">Помещается в  любой багажник</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="pure-g">
             <div class="pure-u-1-1">
@@ -175,13 +209,13 @@
         <div class="sqz-banner">
             <div class="pure-g">
                 <div class="pure-u-1-2">
-                    <div class="baban" style="background-image: url(images/img7.png)">
+                    <div class="baban" style="background-image: linear-gradient(to bottom, rgba(147, 255, 190, 0.5), rgba(132, 246, 255, 0.5), rgba(216, 216, 216, 0.5)),url(images/img7.png)">
                         <h3>КОЛЯСКА</h3>
                         <div>19 890 ₽</div>
                     </div>
                 </div>
                 <div class="pure-u-1-2">
-                    <div class="baban "style="background-image: url(images/pro3.png)">
+                    <div class="baban "style="background-image: linear-gradient(to bottom, rgba(147, 255, 190, 0.5), rgba(132, 246, 255, 0.5), rgba(216, 216, 216, 0.5)),url(images/pro3.png)">
                         <h3>АКСЕССУАРЫ</h3>
                         <div>от 2 890 ₽</div>
                     </div>
@@ -205,7 +239,7 @@
         <div class="pure-g">
             <div class="pure-u-1-1 centerizer">
                 <a href="index.html" class="sqz-footer__logo">
-                    <img width="160" src="images/logo.png" alt="Logo" style="">
+                    <img width="160" src="images/logo.png" alt="Logo">
                 </a>
                 <nav class="sqz-menu">
                     <a href="product.html">О КОЛЯСКЕ</a>     
@@ -232,6 +266,37 @@
         arrow:true,
         variableWidth: true
         }); 
+
+        $('.galery').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            //variableWidth: true,
+            dots: false,
+            arrows: true,
+            focusOnSelect: true,
+            responsive: [
+                {
+                    breakpoint: 1000,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
     </script>
 
 <style>
@@ -281,6 +346,110 @@
             border-left: 2px solid #FFFFFF;
             border-top: 2px solid #FFFFFF;
         }
+
+
+
+.galery .galery-item {
+  position: relative;
+  height: 346px;
+  opacity: 0.4;
+  margin: 10px 0 20px;
+  overflow: hidden;
+  transition: all 0.3s;
+  background-size: cover;
+}
+
+.galery .slick-active.slick-center .galery-item {
+  opacity: 1;
+  margin: 0;
+  transform: scaleY(1.4);
+  z-index: 1;
+}
+.galery .slick-active.slick-center .galery-item .galery-title{
+ opacity:0;
+}
+.galery .galery-item,
+.galery .slick-slide:focus {
+  outline: none !important;
+}
+.galery .galery-item img,
+.galery .slick-slide {
+  transition: all 0.3s;
+}
+
+.galery .galery-item img {
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.galery .slick-dots li button:before {
+  width: 24px;
+  height: 24px;
+
+  background-color: #d8d8d8;
+  border-radius: 50%;
+  content: '';
+}
+
+.slick-dots li.slick-active button:before {
+  background-color: #ae494f;
+}
+.galery-title{
+    position: absolute;
+    top:160px;
+
+ 
+  font-family: Roboto;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+
+}
+.galery .slick-next{     
+        width: 80px;
+        height: 80px;
+        opacity: 0.8;
+        background-color: #d8d8d8;
+        position: absolute;
+        top: 160px;
+        left: 100%;
+        font-size: 0;
+    }
+
+    .galery .slick-next:before{
+        content: '';
+        transform: rotate(135deg) translate(2px, 2px);
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border-left: 2px solid #FFFFFF;
+        border-top: 2px solid #FFFFFF;
+    }
+    .galery .slick-prev{     
+        width: 80px;
+        height: 80px;
+        opacity: 0.8;
+        background-color: #d8d8d8;
+        position: absolute;
+        top: 160px;
+        right: 100%;
+        font-size: 0;
+        z-index: 1;
+    }
+
+    .galery .slick-prev:before{
+        content: '';
+        transform: rotate(-45deg) translate(2px, 2px);
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border-left: 2px solid #FFFFFF;
+        border-top: 2px solid #FFFFFF;
+    }
+
+
+
         </style>
 </body>
 </html>
