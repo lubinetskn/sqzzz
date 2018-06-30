@@ -737,13 +737,12 @@ background-color: rgb(91, 200, 204,0.8);
 }
 
 .sqz-line_title {
-    font-family: Roboto;
+    text-transform: uppercase;
     font-size: 36px;
     font-weight: 500;
     color: #ffffff;
 }
 .sqz-line_subtitle {
-    font-family: Roboto;
     font-size: 24px;
     font-weight: 300;
     color: #ffffff; 
