@@ -46,13 +46,13 @@
         <div class="main-theme-wrap">
             <div class="main-theme">
                 <div class="main-theme-slide">
-                    <div><img src="images/img6.png" alt="" style="transform: scaleX(-1);"></div>
+                    <div class="main-theme-slide_item"><img src="images/img6.png" alt="" style="transform: scaleX(-1);"></div>
                 </div>
                 <div class="main-theme-slide">
-                    <div><img src="images/img6.png" alt=""></div>
+                    <div class="main-theme-slide_item"><img src="images/img6.png" alt=""></div>
                 </div>
                 <div class="main-theme-slide">
-                    <div><img src="images/img6.png" alt=""></div>
+                    <div class="main-theme-slide_item"><img src="images/img6.png" alt=""></div>
                 </div>
             </div>
             <div class="main-theme-text">
@@ -196,19 +196,19 @@
             </div>
         </div>
 
-        <div class="sqz-banner">
+        <div class="sqz-banner sqz-banner-back">
             <div class="pure-g">
                 <div class="pure-u-1-2">
-                    <div class="baban" style="background-image: linear-gradient(to bottom, rgba(147, 255, 190, 0.5), rgba(132, 246, 255, 0.5), rgba(216, 216, 216, 0.5)),url(images/img7.png)">
+                    <a href="product.html" class="baban" style="background-image:url(images/img7.png)">
                         <h3>КОЛЯСКА</h3>
                         <div>19 890 ₽</div>
-                    </div>
+                    </a>
                 </div>
                 <div class="pure-u-1-2">
-                    <div class="baban "style="background-image: linear-gradient(to bottom, rgba(147, 255, 190, 0.5), rgba(132, 246, 255, 0.5), rgba(216, 216, 216, 0.5)),url(images/pro3.png)">
+                    <a href="access.html" class="baban "style="background-image:url(images/pro3.png)">
                         <h3>АКСЕССУАРЫ</h3>
                         <div>от 2 890 ₽</div>
-                    </div>
+                    </a>
                 </div>
             </div>  
         </div>
@@ -253,6 +253,7 @@
         slidesToShow: 1,
         slidesToScroll: 1,
         arrow:true,
+        centerMode: true,
         variableWidth: true
         }); 
 
@@ -293,6 +294,7 @@
             bottom: 0;
             right: 50%;
             font-size: 0;
+            outline: 0;
         }
     
         .main-theme .slick-next:before{
@@ -315,6 +317,7 @@
             left: 50%;
             z-index: 1;
             font-size: 0;
+            outline: 0;
         }
     
         .main-theme .slick-prev:before{
@@ -327,26 +330,36 @@
             border-top: 2px solid #FFFFFF;
         }
 
-    .galery .slick-list{
-        overflow-y: visible;
-        overflow-x: auto;
-    }
     .galery .galery-item {
-    position: relative;
-    height: 346px;
-    opacity: 0.4;
-    margin: 10px 0 20px;
-    overflow: hidden;
-    transition: all 0.3s;
-    background-size: cover;
-    cursor: pointer;
+        position: relative;
+        height: 400px;
+        margin: 10px 0 20px;
+        overflow: hidden;
+        transition: all 0.3s;
+        background-size: cover;
+        cursor: pointer;  
+    }
+
+    .galery-item:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, rgba(147, 255, 190, 0.5), rgba(132, 246, 255, 0.5), rgba(216, 216, 216, 0.5));
+    }
+    .galery.slick-slider .slick-list {
+        overflow: visible;
     }
 
     .galery .slick-current .galery-item {
     opacity: 1;
     margin: 0;
-    transform: scaleY(1.4);
+    transform: scaleY(1.2) translateY(8px);
     z-index: 1;
+    transition: all 0.2s
+    }
+    .galery .slick-current .galery-item:after{
+        background: none;
     }
     .galery .slick-current .galery-item .galery-title{
     opacity:0;
@@ -380,24 +393,24 @@
     .galery-title{
         position: absolute;
         top:160px;
-
-    
-    font-family: Roboto;
-    font-size: 28px;
-    font-weight: 500;
-    text-align: center;
-    color: #ffffff;
-
+        font-family: Roboto;
+        font-size: 28px;
+    transition: all 0.2s;
+        font-weight: 500;
+        text-align: center;
+        color: #ffffff;
     }
     .galery .slick-next{     
         width: 40px;
         height: 40px;
+        outline: 0;
         opacity: 0.8;
         background-color: #d8d8d8;
         position: absolute;
         top: 160px;
         left: 100%;
         font-size: 0;
+        z-index: 101;
     }
 
     .galery .slick-next:before{
@@ -418,7 +431,8 @@
         top: 160px;
         right: 100%;
         font-size: 0;
-        z-index: 1;
+        z-index: 101;
+        outline: 0;
     }
 
     .galery .slick-prev:before{
@@ -429,6 +443,26 @@
         display: inline-block;
         border-left: 2px solid #FFFFFF;
         border-top: 2px solid #FFFFFF;
+    }
+    .galery.slick-slider:before {
+        content: '';
+        background-image: linear-gradient(to bottom, #93ffbe, #84f6ff, #d8d8d8);
+        position: absolute;
+        height: 400px;
+        width: 2000px;
+        right: 100%;
+        z-index: 100;
+        top: 10px;
+    }
+    .galery.slick-slider:after {
+        content: '';
+        background-image: linear-gradient(to bottom, #93ffbe, #84f6ff, #d8d8d8);
+        position: absolute;
+        height: 400px;
+        width: 2000px;
+        left: 100%;
+        z-index: 100;
+        top: 10px;
     }
     @media (min-width: 1280em) { 
         .galery .slick-next{     
