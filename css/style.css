@@ -761,7 +761,7 @@ background-color: rgb(91, 200, 204,0.8);
     vertical-align: middle;
 }
 .sqz-advert_info_title{
-    font-family: Roboto;
+    text-transform: uppercase;
     font-weight: 400;
     font-size: 60px;
     color: #797979;
